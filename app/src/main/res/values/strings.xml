@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RecyclerViewPractice</string>
+    <string name="add_new">add new</string>
+    <string name="format_string">Snoopy size is %d</string>
+</resources>
