@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewpractice.R
 
 class HeaderAdapter: RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder>() {
-    private var flowerCount: Int = 0
+    private var snoopyCount: Int = 0
 
     /* ViewHolder for displaying header. */
     class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        private val flowerNumberTextView: TextView = itemView.findViewById(R.id.snoopy_number_text)
+        private val snoopyNumberTextView: TextView = itemView.findViewById(R.id.snoopy_number_text)
 
-        fun bind(flowerCount: Int) {
-            flowerNumberTextView.text = flowerCount.toString()
+        fun bind(snoopyCount: Int) {
+            snoopyNumberTextView.text = snoopyCount.toString()
         }
     }
 
@@ -28,7 +28,7 @@ class HeaderAdapter: RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder>() {
 
     /* Binds number of flowers to the header. */
     override fun onBindViewHolder(holder: HeaderViewHolder, position: Int) {
-        holder.bind(flowerCount)
+        holder.bind(snoopyCount)
     }
 
     /* Returns number of items, since there is only one item in the header return one  */
@@ -37,8 +37,8 @@ class HeaderAdapter: RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder>() {
     }
 
     /* Updates header to display number of flowers when a flower is added or subtracted. */
-    fun updateFlowerCount(updatedFlowerCount: Int) {
-        flowerCount = updatedFlowerCount
+    fun updateSnoopyCount(updateSnoopyCount: Int) {
+        snoopyCount = updateSnoopyCount
         notifyDataSetChanged()
     }
 }

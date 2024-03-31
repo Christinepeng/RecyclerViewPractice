@@ -54,4 +54,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.androidx.recyclerview)
+//    kapt (libs.androidx.databinding.compiler)
 }
