@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.AddSnoopyActivity" />
-<!--        <activity android:name=".ui.SnoopyDetailActivity" />-->
+        <activity android:name=".ui.SnoopyDetailActivity" />
     </application>
 
 </manifest>

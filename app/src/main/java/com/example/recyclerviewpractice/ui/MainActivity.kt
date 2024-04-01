@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.ConcatAdapter
 import com.example.recyclerviewpractice.data.Snoopy
 import com.example.recyclerviewpractice.viewmodel.SnoopyViewModelFactory
 
+const val SNOOPY_ID = "snoopy id"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModelFactory = SnoopyViewModelFactory(this)
@@ -48,10 +49,10 @@ class MainActivity : AppCompatActivity() {
             fabOnClick()
         }
     }
-    private fun adapterOnClick(flower: Snoopy) {
-//        val intent = Intent(this, FlowerDetailActivity()::class.java)
-//        intent.putExtra(FLOWER_ID, flower.id)
-//        startActivity(intent)
+    private fun adapterOnClick(snoopy: Snoopy) {
+        val intent = Intent(this, SnoopyDetailActivity()::class.java)
+        intent.putExtra(SNOOPY_ID, snoopy.id)
+        startActivity(intent)
     }
 
     private fun fabOnClick() {
