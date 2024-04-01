@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.adapter = concatAdapter
 
-        viewModel.snoopyList.observe(this, {
+        viewModel.SnoopysLiveData.observe(this, {
             it?.let {
                 myAdapter.submitList(it as MutableList<Snoopy>)
                 headerAdapter.updateSnoopyCount(it.size)

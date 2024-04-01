@@ -4,31 +4,30 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.recyclerviewpractice.R
+import com.example.recyclerviewpractice.data.DataSource
 import com.example.recyclerviewpractice.data.Snoopy
+import kotlin.random.Random
 
-class SnoopyViewModel: ViewModel() {
+class SnoopyViewModel(val dataSource: DataSource) : ViewModel() {
 
 
-    private val _snoopyList = MutableLiveData<List<Snoopy>>(listOf(
-        Snoopy("Snoopy 1", R.drawable.snoopy1, 1),
-        Snoopy("Woodstock", R.drawable.woodstock, 2),
-        Snoopy("Charlie Brown", R.drawable.charlie_brown, 3),
-        Snoopy("Snoopy 2", R.drawable.snoopy2, 4),
-        Snoopy("Snoopy 3", R.drawable.snoopy3, 5),
+    val SnoopysLiveData = dataSource.getSnoopyList()
 
-        Snoopy("Snoopy 1", R.drawable.snoopy1, 6),
-        Snoopy("Woodstock", R.drawable.woodstock, 7),
-        Snoopy("Charlie Brown", R.drawable.charlie_brown, 8),
-        Snoopy("Snoopy 2", R.drawable.snoopy2, 9),
-        Snoopy("Snoopy 3", R.drawable.snoopy3, 10),
+    /* If the name and description are present, create new Snoopy and add it to the datasource */
+    fun insertSnoopy(snoopyName: String?, snoopyDescription: String?) {
+        if (snoopyName == null || snoopyDescription == null) {
+            return
+        }
 
-        Snoopy("Snoopy 1", R.drawable.snoopy1, 11),
-        Snoopy("Woodstock", R.drawable.woodstock, 12),
-        Snoopy("Charlie Brown", R.drawable.charlie_brown ,13),
-        Snoopy("Snoopy 2", R.drawable.snoopy2, 14),
-        Snoopy("Snoopy 3", R.drawable.snoopy3, 15)
-    ))
+        val image = dataSource.getRandomSnoopyImageAsset()
+        val newSnoopy = Snoopy(
+            Random.nextLong(),
+            snoopyName,
+            image,
+            snoopyDescription
+        )
 
-    val snoopyList: LiveData<List<Snoopy>> = _snoopyList
+        dataSource.addSnoopy(newSnoopy)
+    }
 
 }

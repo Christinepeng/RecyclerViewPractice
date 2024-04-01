@@ -49,8 +49,8 @@ class MyAdapter(private val onClick: (Snoopy) -> Unit) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val snoopy = getItem(position)
-        holder.imageView.setImageResource(snoopy.image)
-        holder.textView.text = snoopy.name
+//        holder.imageView.setImageResource(snoopy.image)
+//        holder.textView.text = snoopy.name
         holder.bind(snoopy)
     }
 }
