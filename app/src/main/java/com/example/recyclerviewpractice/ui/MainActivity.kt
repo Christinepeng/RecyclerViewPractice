@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
     private fun fabOnClick() {
         Log.e("bear", "fabOnClick()")
         val intent = Intent(this, AddSnoopyActivity::class.java)
-        startActivity(intent)
-//        startActivityForResult(intent, 1)
+//        startActivity(intent)
+        startActivityForResult(intent, 1)
     }
 }
