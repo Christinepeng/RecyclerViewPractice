@@ -1,3 +1,3 @@
 ### MVVM
-### Databinding
+### LiveData Data Binding
 ### RecyclerView
