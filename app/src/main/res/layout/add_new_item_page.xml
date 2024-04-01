@@ -5,10 +5,9 @@
     tools:context=".ui.AddNewItemPage">
 
     <data>
-
         <variable
             name="viewModel"
-            type="com.example.recyclerviewpractice.viewmodel.AddNewItemViewModel" />
+            type="com.example.recyclerviewpractice.viewmodel.SnoopyViewModel" />
     </data>
 
     <LinearLayout

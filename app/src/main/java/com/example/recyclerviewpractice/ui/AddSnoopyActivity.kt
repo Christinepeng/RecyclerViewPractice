@@ -3,6 +3,7 @@ package com.example.recyclerviewpractice.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.recyclerviewpractice.R
